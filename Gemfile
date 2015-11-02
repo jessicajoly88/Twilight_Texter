@@ -10,13 +10,13 @@ gem 'sass-rails', '>= 3.2'
 gem "font-awesome-rails"
 gem 'selenium-webdriver'
 gem 'rest-client'
+gem 'dotenv-rails'
 
 group :development do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
   gem 'quiet_assets'
-  gem 'dotenv-rails'
 end
 
 group :test, :development do
