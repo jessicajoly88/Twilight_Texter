@@ -7,17 +7,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
-gem 'will_paginate'
-gem 'will_paginate-bootstrap'
 gem "font-awesome-rails"
-gem 'mini_magick'
 gem 'selenium-webdriver'
+gem 'rest-client'
 
 group :development do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
   gem 'quiet_assets'
+  gem 'dotenv-rails'
 end
 
 group :test, :development do
