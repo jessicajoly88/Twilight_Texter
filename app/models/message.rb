@@ -6,12 +6,16 @@ private
   def send_message
     response = RestClient::Request.new(
       :method => :post,
-      :url => 'https://api.twilio.com/2010-04-01/Accounts/AC3e0af22b6b772460f352ba8c6586fbde/Messages.json',
-      :user => 'TWILIO_ACCOUNT_SID',
-      :password => 'TWILIO_AUTH_TOKEN',
+      :url => 'https://api.twilio.com/2010-04-01/Accounts/AC9bdc6a2d8af5573fc836c3fa2a7fcf34/Messages.json',
+      :user => ENV['TWILIO_ACCOUNT_SID'],
+      :password => ENV['TWILIO_AUTH_TOKEN'],
       :payload => { :Body => body,
                     :To => to,
                     :From => from }
     ).execute
+  rescue RestClient::BadRequest => error
+    message = JSON.parse(error.response)['message']
+    errors.add(:base, message)
+    false
   end
 end
